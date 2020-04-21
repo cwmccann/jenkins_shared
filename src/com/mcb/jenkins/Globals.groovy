@@ -6,7 +6,7 @@ class Globals {
     //
     // import com.mcb.jenkins.Globals
     // println Globals.foo
-    static String foo = "bar"
+    static String foo = "qux"
 
     
     static String mcbTestcasesGit = "git@testcases.github.com:miwdesign/mcb-testcases.git"
