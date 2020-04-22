@@ -14,7 +14,7 @@ class Utilities implements Serializable {
   def uploadTestModule(server, testModuleFile) {
     println "Upload test module [$testModuleFile] to ${server}"
 
-    steps.sh """ curl \ 
+    steps.sh """curl \
               --request PUT \
               --url http://${server}/api/testModules/upsert \
               --header 'authorization: Basic c3lzdGVtYWRtaW46TjhNYXJsNWM=' \
