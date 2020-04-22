@@ -10,4 +10,11 @@ class Globals {
 
     
     static String mcbTestcasesGit = "git@testcases.github.com:miwdesign/mcb-testcases.git"
+
+    static servers = [
+        "EPTT1" : "192.168.0.47",
+        "EPTT2" : "192.168.0.207",
+        "QA01"  : "192.168.1.47",
+        "DEV02" : "192.168.1.88",
+    ]
 }
