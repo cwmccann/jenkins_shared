@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+package com.mcb.jenkins
 
 class Utilities implements Serializable {
   def steps
