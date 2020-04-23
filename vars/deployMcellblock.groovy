@@ -10,7 +10,7 @@ def getServerPackageVersion(server) {
 
 def call(String server,
          String buildJob = 'mcellblock-master-automatic-build',
-         String buildId = 'lastSuccessful'
+         String buildId = 'lastSuccessful',
          boolean newInstall = false,
          boolean waitForCompletion = true) {
     
