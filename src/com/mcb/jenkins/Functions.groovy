@@ -8,5 +8,3 @@ def getBranches(repository) {
         it.split()[1].replaceAll('refs/heads/', '').replaceAll('refs/tags/', '').replaceAll("\\^\\{\\}", '')
     }
 }
-
-//println getBranches("git@github.com:miwdesign/mcb-testcases.git")
