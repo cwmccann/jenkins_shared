@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+import groovy.json.JsonSlurper
 
 def getServerPackageVersion(server) {
     def slurper = new JsonSlurper()
