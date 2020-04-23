@@ -57,7 +57,7 @@ def call(String server,
         timeout(time: 10, unit: 'MINUTES') {
             waitUntil {
                 try {
-                    serverVersion = getServerPackageVersion(params.deploymentServer)
+                    serverVersion = getServerPackageVersion(server)
                     println "Server version: ${serverVersion}, packageVersion: ${packageVersion}"
                     return packageVersion == serverPackageVersion
                 } catch (exception) {
