@@ -15,11 +15,14 @@ class Utilities implements Serializable {
     println "Upload test module [$testModuleFile] to ${server}"
 
     steps.sh """curl \
-              --request PUT \
+              --silent \
+              --show-error \
+              --include \ 
+              --request PUT \              
               --url http://${server}/api/testModules/upsert \
               --header 'authorization: Basic c3lzdGVtYWRtaW46TjhNYXJsNWM=' \
               --header 'content-type: multipart/form-data;' \
-              --form 'file=@${testModuleFile}; type=application/java-archive'
+              --form 'file=@${testModuleFile}; type=application/java-archive' | grep "HTTP/1.1 500"
       """
   }
 }
