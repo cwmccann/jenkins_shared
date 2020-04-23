@@ -18,7 +18,7 @@ def call(String server,
     def packageFilter = "**/mcellblock-*.tgz"
     
     println "Deploying ${buildJob} ${buildId} to ${server}"
-    assert buildId == 'lastSuccessful' || buildId.matches("(\\d+)"
+    assert buildId == 'lastSuccessful' || buildId.matches("(\\d+)")
     def buildSelector = buildId == 'lastSuccessful' ? lastSuccessful() : specific(buildId)
 
     copyArtifacts(
