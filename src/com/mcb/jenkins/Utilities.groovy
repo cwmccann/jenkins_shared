@@ -27,6 +27,7 @@ class Utilities implements Serializable {
               --header 'content-type: multipart/form-data;' \
               --form 'file=@${testModuleFile}; type=application/java-archive'
         """)
+    
     if (!output.contains("HTTP/1.1 201")) {
       steps.error("Uploading test module ${testModuleFile} to ${server} failed: \n ${output}")
     } else {
