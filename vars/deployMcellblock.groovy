@@ -36,12 +36,12 @@ def call(String server,
     packageVersion = sh(returnStdout: true, script: "tar -xOf ${pkg} mcellblock.properties |grep packageVersion | cut -d '=' -f2-").trim()
     println "Package to install version is ${packageVersion}"
 
-    def serverPackageVersion = getServerPackageVersion(server)
-    println "Server ${params.deploymentServer} has version ${serverPackageVersion}"
+    def serverVersion = getServerPackageVersion(server)
+    println "Server ${server} has version ${serverVersion}"
 
     if (newInstall) {
         error("Not implemented")
-    } else if (packageVersion != serverPackageVersion) {
+    } else if (packageVersion != serverVersion) {
         println "Updating the mcellblock application to version ${packageVersion}"
 
         sh """ curl --request POST \
@@ -57,8 +57,8 @@ def call(String server,
         timeout(time: 10, unit: 'MINUTES') {
             waitUntil {
                 try {
-                    def serverPackageVersion = getServerPackageVersion(params.deploymentServer)
-                    println "Server version: ${serverPackageVersion}, packageVersion: ${packageVersion}"
+                    serverVersion = getServerPackageVersion(params.deploymentServer)
+                    println "Server version: ${serverVersion}, packageVersion: ${packageVersion}"
                     return packageVersion == serverPackageVersion
                 } catch (exception) {
                     println "Error getting server version: " + exception.getMessage()
