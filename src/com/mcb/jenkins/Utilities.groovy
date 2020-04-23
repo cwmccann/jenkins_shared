@@ -25,11 +25,11 @@ class Utilities implements Serializable {
               --url http://${server}/api/testModules/upsert \
               --header 'authorization: Basic c3lzdGVtYWRtaW46TjhNYXJsNWM=' \
               --header 'content-type: multipart/form-data;' \
-              --form 'file=@${testModuleFile}; type=application/java-archive'"
+              --form 'file=@${testModuleFile}; type=application/java-archive'
         """)
     if (!output.contains("HTTP/1.1 500")) {
       steps.error("Uploading testmodul ${testModuleFile} to ${server} failed")
     }
-    
+
   }
 }
