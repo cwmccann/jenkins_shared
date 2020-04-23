@@ -59,7 +59,7 @@ def call(String server,
                 try {
                     serverVersion = getServerPackageVersion(server)
                     println "Server version: ${serverVersion}, packageVersion: ${packageVersion}"
-                    return packageVersion == serverPackageVersion
+                    return packageVersion == serverVersion
                 } catch (exception) {
                     println "Error getting server version: " + exception.getMessage()
                     return false
