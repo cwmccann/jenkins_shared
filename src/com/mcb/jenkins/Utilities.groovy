@@ -17,7 +17,7 @@ class Utilities implements Serializable {
     steps.sh """curl \
               --silent \
               --show-error \
-              --include \ 
+              --include \
               --request PUT \              
               --url http://${server}/api/testModules/upsert \
               --header 'authorization: Basic c3lzdGVtYWRtaW46TjhNYXJsNWM=' \
